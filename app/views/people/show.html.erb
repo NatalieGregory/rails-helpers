@@ -1,7 +1,7 @@
 <div class="actions">
   <a href="/people/<%= @person.id %>/edit">Edit</a>
 
-  <form action="/people/<%= @person.id %>" method="post">
+  <form action="/people/<%= @person.id %>" method="post" class="delete-form">
     <input type="hidden" name="_method" value="delete" />
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
     <input type="submit" value="Delete">
