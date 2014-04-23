@@ -10,4 +10,8 @@ Rails.application.routes.draw do
 
   post '/people', to: 'people#create'
 
+  get '/people/:id/edit', to: 'people#edit'
+
+  put '/people/:id', to: 'people#update'
+
 end
