@@ -1,4 +1,12 @@
-# Generating this app
+# Demo Rails App
+
+## Overview
+
+This apps shows how to CRUD different domain objects.
+
+* People - super simple - no validations, few Rails helpers, ERB
+
+## Generating this app
 
 Generate the app:
 
@@ -18,9 +26,14 @@ then run:
     bundle
     RAILS_ENV=test rails g rspec:install
 
+## To run migrations
+
+    bin/rake db:migrate
+
 ## Getting Setup Locally
 
     bundle
     bin/rake db:create
     bin/rake db:migrate
     bin/rake spec
+
