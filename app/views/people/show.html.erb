@@ -1,0 +1,14 @@
+<div class="actions">
+  <a href="/people/<%= @person.id %>/edit">Edit</a>
+</div>
+
+<h1>Showing Person</h1>
+
+<dl class="attributes">
+  <dt>First Name</dt>
+  <dd><%= @person.first_name %></dd>
+  <dt>Last Name</dt>
+  <dd><%= @person.last_name %></dd>
+  <dt>Date of Birth</dt>
+  <dd><%= @person.date_of_birth ? @person.date_of_birth.strftime("%-m/%-d/%Y") : nil %></dd>
+</dl>
