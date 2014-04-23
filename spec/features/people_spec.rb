@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Managing People' do
-  scenario 'User creates and edits a person' do
+  scenario 'User creates and edits and deletes a person' do
     visit '/'
     click_on "Add New Person"
     fill_in "First name", with: "Joe"
@@ -30,5 +30,10 @@ feature 'Managing People' do
     expect(page).to have_content("Joseph")
     expect(page).to have_content("Jenkins")
     expect(page).to have_content("5/12/2014")
+
+    click_on "Delete"
+    expect(page).to have_no_content("Joseph")
+    expect(page).to have_no_content("Jenkins")
+    expect(page).to have_no_content("5/12/2014")
   end
 end

@@ -14,4 +14,6 @@ Rails.application.routes.draw do
 
   put '/people/:id', to: 'people#update'
 
+  delete '/people/:id', to: 'people#destroy'
+
 end
