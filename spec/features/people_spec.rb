@@ -3,6 +3,7 @@ require 'spec_helper'
 feature 'Managing People' do
   scenario 'User creates and edits and deletes a person' do
     visit '/'
+    click_on "People"
     click_on "Add New Person"
     fill_in "First name", with: "Joe"
     fill_in "Last name", with: "Johnson"

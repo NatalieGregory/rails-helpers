@@ -1,0 +1,28 @@
+<div class="actions">
+  <a href="/trees/new">Add New Tree</a>
+</div>
+
+<h1>Tree</h1>
+
+<table class="table-standard">
+  <thead>
+  <tr>
+    <th>Species</th>
+    <th>Planted On</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @trees.each do |tree| %>
+    <tr>
+      <td>
+        <a href="/trees/<%= tree.id %>">
+          <%= tree.species %>
+        </a>
+      </td>
+      <td>
+        <%= tree.planted_on ? tree.planted_on.strftime("%-m/%-d/%Y") : nil %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

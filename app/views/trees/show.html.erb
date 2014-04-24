@@ -1,0 +1,19 @@
+<div class="actions">
+  <a href="/trees/<%= @tree.id %>/edit">Edit</a>
+
+  <form action="/trees/<%= @tree.id %>" method="post" class="delete-form">
+    <input type="hidden" name="_method" value="delete" />
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+    <input type="submit" value="Delete">
+  </form>
+
+</div>
+
+<h1>Showing Tree</h1>
+
+<dl class="attributes">
+  <dt>Species</dt>
+  <dd><%= @tree.species %></dd>
+  <dt>Planted on</dt>
+  <dd><%= @tree.planted_on ? @tree.planted_on.strftime("%-m/%-d/%Y") : nil %></dd>
+</dl>

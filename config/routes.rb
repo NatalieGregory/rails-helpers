@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'people#index'
+  root 'welcome#index'
 
   get '/people', to: 'people#index'
 
@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   put '/people/:id', to: 'people#update'
 
   delete '/people/:id', to: 'people#destroy'
+
+  resources :trees
 
 end

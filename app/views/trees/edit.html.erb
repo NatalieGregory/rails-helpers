@@ -1,0 +1,31 @@
+<h1>Edit Tree</h1>
+
+<form action="/trees/<%= @tree.id %>" method="post">
+  <input type="hidden" name="_method" value="put" />
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+
+  <% if @tree.errors.present? %>
+    <div class="errors">
+      <h1>There was an error</h1>
+      <ul class="error-list">
+        <% @tree.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <label for="tree_species" class="form-label">Species</label>
+    <input name="tree[species]" id="tree_species" value="<%= @tree.species %>">
+  </p>
+
+  <p>
+    <label for="tree_planted_on" class="form-label">Planted on</label>
+    <input name="tree[planted_on]" id="tree_planted_on" value="<%= @tree.planted_on %>">
+  </p>
+
+  <p>
+    <input type="submit" value="Update Tree" class="form-button">
+  </p>
+</form>
