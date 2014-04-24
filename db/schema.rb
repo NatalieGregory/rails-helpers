@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424030606) do
+ActiveRecord::Schema.define(version: 20140424032905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "divas", force: true do |t|
+    t.string  "stage_name"
+    t.string  "high_note"
+    t.boolean "still_singing"
+  end
 
   create_table "gadgets", force: true do |t|
     t.string  "model"

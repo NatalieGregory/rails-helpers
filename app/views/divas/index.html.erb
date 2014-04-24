@@ -1,0 +1,30 @@
+<div class="actions">
+  <%= link_to "Add New Diva", new_diva_path %>
+</div>
+
+<h1>Diva</h1>
+
+<table class="table-standard">
+  <thead>
+  <tr>
+    <th>Stage Name</th>
+    <th>High Note</th>
+    <th>Still Singing?</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @divas.each do |diva| %>
+    <tr>
+      <td>
+        <%= link_to diva.stage_name, diva %>
+      </td>
+      <td>
+        <%= diva.high_note %>
+      </td>
+      <td>
+        <%= diva.still_singing? ? "Yes" : "No" %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

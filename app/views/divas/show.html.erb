@@ -1,0 +1,16 @@
+<div class="actions">
+  <%= link_to "Edit", edit_diva_path(@diva) %>
+  |
+  <%= link_to "Delete", diva_path(@diva), method: :delete, data: {confirm: "Are you sure?"} %>
+</div>
+
+<h1>Showing Diva</h1>
+
+<dl class="attributes">
+  <dt>Stage Name</dt>
+  <dd><%= @diva.stage_name %></dd>
+  <dt>High Note</dt>
+  <dd><%= @diva.high_note %></dd>
+  <dt>Status</dt>
+  <dd><%= @diva.still_singing? ? "Still singing!" : "No longer singing" %></dd>
+</dl>

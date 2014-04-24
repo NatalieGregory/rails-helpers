@@ -21,4 +21,11 @@
       <li>Makes use of user-defined <code>format_gadget_price</code> helper method</li>
     </ul>
   </li>
+  <%= content_tag :li do %>
+    <%= link_to "Divas", Diva %>
+    <%= content_tag :ul do %>
+      <%= content_tag :li, "Basic CRUD with validations" %>
+      <%= content_tag :li, "More Rails helpers (implicit routes, content_tag, partials)" %>
+    <% end %>
+  <% end %>
 </ul>

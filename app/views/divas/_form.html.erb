@@ -1,0 +1,33 @@
+<%= form_for @diva do |f| %>
+
+  <% if @diva.errors.present? %>
+    <div class="errors">
+      <h1>There was an error</h1>
+      <ul class="error-list">
+        <% @diva.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :stage_name, class: "form-label" %>
+    <%= f.text_field :stage_name %>
+  </p>
+
+  <p>
+    <%= f.label :high_note, class: "form-label" %>
+    <%= f.text_field :high_note %>
+  </p>
+
+  <p>
+    <%= f.label :still_singing, class: "form-label" %>
+    <%= f.check_box :still_singing %>
+  </p>
+
+  <p>
+    <%= f.submit class: "form-button" %>
+  </p>
+
+<% end %>
