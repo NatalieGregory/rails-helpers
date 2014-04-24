@@ -1,0 +1,30 @@
+<h1>Edit Gadget</h1>
+
+<%= form_for @gadget do |f| %>
+
+  <% if @gadget.errors.present? %>
+    <div class="errors">
+      <h1>There was an error</h1>
+      <ul class="error-list">
+        <% @gadget.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :model, class: "form-label" %>
+    <%= f.text_field :model %>
+  </p>
+
+  <p>
+    <%= f.label :price, class: "form-label" %>
+    <%= f.number_field :price %>
+  </p>
+
+  <p>
+    <%= f.submit class: "form-button" %>
+  </p>
+
+<% end %>

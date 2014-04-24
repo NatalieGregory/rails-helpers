@@ -1,0 +1,26 @@
+<div class="actions">
+  <%= link_to "Add New Gadget", new_gadget_path %>
+</div>
+
+<h1>Gadget</h1>
+
+<table class="table-standard">
+  <thead>
+  <tr>
+    <th>Model</th>
+    <th>Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @gadgets.each do |gadget| %>
+    <tr>
+      <td>
+        <%= link_to gadget.model, gadget_path(gadget) %>
+      </td>
+      <td>
+        <%= format_gadget_price(gadget) %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

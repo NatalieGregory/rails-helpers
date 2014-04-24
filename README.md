@@ -6,6 +6,7 @@ This apps shows how to CRUD different domain objects.
 
 * People - super simple - no validations, few Rails helpers, ERB
 * Trees - similar to People, but uses `resources` in routes, and has validations
+* Gadgets - Uses named routes helpers, `link_to`, and `form_for` throughout
 
 ## Generating this app
 

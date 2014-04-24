@@ -1,0 +1,14 @@
+<div class="actions">
+  <%= link_to "Edit", edit_gadget_path(@gadget) %>
+  |
+  <%= link_to "Delete", gadget_path(@gadget), method: :delete, data: {confirm: "Are you sure?"} %>
+</div>
+
+<h1>Showing Gadget</h1>
+
+<dl class="attributes">
+  <dt>Model</dt>
+  <dd><%= @gadget.model %></dd>
+  <dt>Price</dt>
+  <dd><%= format_gadget_price(@gadget) %></dd>
+</dl>
