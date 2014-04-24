@@ -41,7 +41,7 @@ class TreesController < ApplicationController
   def destroy
     @tree = Tree.find(params[:id])
     @tree.destroy
-    redirect_to '/'
+    redirect_to '/trees'
   end
 
 end
