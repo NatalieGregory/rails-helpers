@@ -13,9 +13,10 @@ class TreesController < ApplicationController
   end
 
   def create
-    @tree = Tree.new
-    @tree.species = params[:tree][:species]
-    @tree.planted_on = params[:tree][:planted_on]
+    @tree = Tree.new(
+      species: params[:tree][:species],
+      planted_on: params[:tree][:planted_on]
+    )
     if @tree.save
       redirect_to '/trees'
     else
