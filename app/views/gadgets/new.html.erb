@@ -2,7 +2,7 @@
 
 <%= form_for @gadget do |f| %>
 
-  <% if @gadget.errors.present? %>
+  <% if @gadget.errors.any? %>
     <div class="errors">
       <h1>There was an error</h1>
       <ul class="error-list">
@@ -16,6 +16,9 @@
   <p>
     <%= f.label :model, class: "form-label" %>
     <%= f.text_field :model %>
+    <% if @gadget.errors.include?(:model) %>
+      <p class="error-explanation"><%= @gadget.errors[:model].first %>
+    <% end %>
   </p>
 
   <p>
